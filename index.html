@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Text to Speech</title>
     <style>
         body {
             background: #e0e0e0;
@@ -22,6 +22,8 @@
         }
         section textarea {
             resize: none;
+            width: 90%;
+            min-height: 10vh;
             border-radius: 10px;
             background: #e0e0e0;
             box-shadow:  12px 12px 24px #b5b5b5,
@@ -30,12 +32,17 @@
         section button {
             padding: 6px 65px;
         }
+        @media (max-width: 500px) {
+            section {
+                width: 90%;
+            }
+        }
     </style>
 </head>
 <body>
     <section>
         <h1>Welcome to textToSpeech</h1>
-        <textarea name="" id="text" cols="80" rows="10" placeholder="What would you like to say?"></textarea><br>
+        <textarea name="" id="text" placeholder="What would you like to say?"></textarea><br>
         <button onclick="textToSpeech()">Say</button>
     </section>
 </body>
