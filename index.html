@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            background: #e0e0e0;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        section {
+            padding: 10px;
+            width: 50%;
+            margin: 0 auto; 
+            text-align: center;
+            border-radius: 50px;
+            background: #e0e0e0;
+            box-shadow:  12px 12px 24px #b5b5b5,
+                        -12px -12px 24px #ffffff;
+        }
+        section textarea {
+            resize: none;
+            border-radius: 10px;
+            background: #e0e0e0;
+            box-shadow:  12px 12px 24px #b5b5b5,
+                        -12px -12px 24px #ffffff;
+        }
+        section button {
+            padding: 6px 65px;
+        }
+    </style>
+</head>
+<body>
+    <section>
+        <h1>Welcome to textToSpeech</h1>
+        <textarea name="" id="text" cols="80" rows="10" placeholder="What would you like to say?"></textarea><br>
+        <button onclick="textToSpeech()">Say</button>
+    </section>
+</body>
+<script>
+    let text = document.getElementById('text');
+    let speech = new SpeechSynthesisUtterance();
+    function textToSpeech() {
+        speech.text = text.value;
+        speech.rate = 1;
+        speech.volume = 1;
+        speech.pitch = 1;
+
+        // Speak in language
+        speech.lang = 'en-US';
+        speechSynthesis.speak(speech);
+    }
+    // textToSpeech(text);
+</script>
+</html>
